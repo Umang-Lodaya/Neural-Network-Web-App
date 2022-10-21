@@ -1,14 +1,15 @@
-from urllib import response
-import streamlit as st
 import json
 import requests
-import matplotlib.pyplot as plt
 import numpy as np
+import streamlit as st
+from urllib import response
+import matplotlib.pyplot as plt
 
-URI = 'http://127.0.0.1:5000'
+URI = 'http://127.0.0.1:5000/'
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title('Neural Network Visualizer')
 st.sidebar.markdown('Input Image')
+
 if st.button('Get Random Prediction'):
     response = requests.post(URI, data={})
     response = json.loads(response.text)
@@ -33,8 +34,13 @@ if st.button('Get Random Prediction'):
 
             if layers == 3:
                 plt.xlabel(str(i), fontsize=40)
+            else:
+                plt.xlabel(str(i+1), fontsize=40)
 
         plt.subplots_adjust(wspace=0.05, hspace=0.05)
         plt.tight_layout()
-        st.text(f'Layer {i+1}')
+        if layers == 3:
+            st.text(f'Output Layer')
+        else:
+            st.text(f'Hidden Layer {layers+1}: Layer with {i+1} Neurons')
         st.pyplot()
