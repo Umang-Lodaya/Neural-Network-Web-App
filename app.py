@@ -32,14 +32,14 @@ if st.button('Get Random Prediction'):
             plt.xticks([])
             plt.yticks([])
 
-            if layers == 3:
+            if layers == len(preds)-1:
                 plt.xlabel(str(i), fontsize=40)
             else:
                 plt.xlabel(str(i+1), fontsize=40)
 
         plt.subplots_adjust(wspace=0.05, hspace=0.05)
         plt.tight_layout()
-        if layers == 3:
+        if layers == len(preds)-1:
             st.text(f'Output Layer')
         else:
             st.text(f'Hidden Layer {layers+1}: Layer with {i+1} Neurons')
