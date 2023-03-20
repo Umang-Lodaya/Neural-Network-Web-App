@@ -1,10 +1,6 @@
-json
-requests
 numpy
 streamlit
-urllib
-matplotlib.pyplot
+matplotlib
 keras
 random
 tensorflow
-flask
