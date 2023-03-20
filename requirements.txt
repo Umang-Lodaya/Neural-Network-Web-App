@@ -1,6 +1,10 @@
-Flask
-matplotlib
-numpy
+json
 requests
+numpy
 streamlit
+urllib
+matplotlib.pyplot
 keras
+random
+tensorflow
+flask
