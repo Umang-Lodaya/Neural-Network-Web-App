@@ -16,7 +16,6 @@ x_test = x_test / 255
 
 # print(x_test.shape[0])
 
-
 def get_prediction():
     index = random.randint(0,10000)
     image = x_test[index, :, :]
@@ -33,6 +32,7 @@ def index():
             'prediction': final_preds,
             'image': image.tolist()
         })
+    
     return 'Welcome'
 
 
