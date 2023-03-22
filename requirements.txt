@@ -3,3 +3,4 @@ streamlit
 matplotlib
 keras
 tensorflow
+flask
